@@ -5,9 +5,15 @@
     android:layout_alignParentTop="true"
     android:orientation="horizontal"
     android:padding="10dp">
+    <TextView
+        android:layout_width="3dp"
+        android:layout_height="15dp"
+        android:background="@android:color/holo_blue_bright"
+        />
 
     <TextView
         android:id="@+id/itemTitle"
+        android:layout_marginLeft="6dp"
         android:layout_width="0dp"
         android:textSize="22sp"
         android:text="hello"

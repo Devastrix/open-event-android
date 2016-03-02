@@ -159,10 +159,10 @@ public class TracksActivity extends BaseActivity implements SearchView.OnQueryTe
                 return true;
             case R.id.filter_button:
                 // dialog for filter selection
-                AlertDialog.Builder builder =
+                final AlertDialog.Builder builder =
                         new AlertDialog.Builder(this, R.style.AppCompatAlertDialogStyle);
                 LayoutInflater inflater = LayoutInflater.from(this);
-                View view = inflater.inflate(R.layout.filter_item, null);
+                final View view = inflater.inflate(R.layout.filter_item, null);
                 //recyclerview
                 recyclerView = (RecyclerView)view.findViewById(R.id.filter_tracks);
                 FilterAdapter adapter = new FilterAdapter(this, getData());
@@ -173,7 +173,12 @@ public class TracksActivity extends BaseActivity implements SearchView.OnQueryTe
                     @Override
                     public void onClick(View v) {
                         noFilter();
+                       // sessionsListAdapter.getFilter()
+                        Log.d("clicked", "reset");
+                        FilterAdapter adapter1 = new FilterAdapter(getBaseContext(), getData());
+                        recyclerView.setAdapter(adapter1);
 
+                    //    view.invalidate();
                     }
                 });
 

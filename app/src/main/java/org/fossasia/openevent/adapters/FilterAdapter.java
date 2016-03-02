@@ -35,8 +35,8 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.MyViewHold
         inflater = LayoutInflater.from(context);
         this.data = data;
         this.context = context;
-        checkedFilters = new Boolean[data.size()];
-        checkedFilters = new SaveFilters().loadArray("Filters", context);
+        this.checkedFilters = new Boolean[data.size()];
+        this.checkedFilters = new SaveFilters().loadArray("Filters", context);
 
     }
 
@@ -107,7 +107,6 @@ public class FilterAdapter extends RecyclerView.Adapter<FilterAdapter.MyViewHold
 
             // add to sharedpreference
             new SaveFilters().saveArray(checkedFilters,"Filters", c);
-
 
         }
     }
