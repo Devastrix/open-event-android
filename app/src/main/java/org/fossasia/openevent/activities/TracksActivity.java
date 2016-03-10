@@ -26,7 +26,6 @@ import org.fossasia.openevent.R;
 import org.fossasia.openevent.adapters.FilterAdapter;
 import org.fossasia.openevent.adapters.SessionsListAdapter;
 import org.fossasia.openevent.api.Urls;
-import org.fossasia.openevent.data.Information;
 import org.fossasia.openevent.data.Session;
 import org.fossasia.openevent.data.Track;
 import org.fossasia.openevent.dbutils.DbSingleton;
@@ -230,15 +229,14 @@ public class TracksActivity extends BaseActivity implements SearchView.OnQueryTe
     }
 
     // getdata for filter recyclerview
-    public static List<Information> getData() {
-        List<Information> data = new ArrayList<>();
+    public static List<String> getData() {
+        List<String> data = new ArrayList<>();
 
         for(int i = 0; i < title.length && i < title.length; i++) {
-            Information current  = new Information();
 
-            current.Title = title[i];
 
-            data.add(current);
+            data.add(title[i]);
+
         }
         return data;
     }
